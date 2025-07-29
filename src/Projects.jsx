@@ -5,8 +5,8 @@ import Col from 'react-bootstrap/Col';
 
 const demoProjects = [
   {
-    title: 'Climate And Air index  Prediction ',
-    desc: 'Climate Change Prediction and Air index Analaysis using Machine Learning and React',
+    title: 'Climate And GHG Prediction ',
+    desc: 'Climate Change Prediction and GHG Analaysis using Machine Learning and React',
     link: 'https://climappsngce.netlify.app/',
   }
   // Add more repositories here as needed, following the same format.
@@ -23,7 +23,7 @@ function Projects() {
               <Card.Body>
                 <Card.Title>{proj.title}</Card.Title>
                 <Card.Text>{proj.desc}</Card.Text>
-                <Button variant="info" href={proj.link} target="_blank" disabled>
+                <Button variant="info" href={proj.link} target="_blank">
                   View Demo
                 </Button>
               </Card.Body>
