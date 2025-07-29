@@ -1,0 +1,131 @@
+.page, .portfolio-container, body, html {
+  background: #000 !important;
+}
+
+.page {
+  min-height: 60vh;
+}
+
+.card, .project-card, .about, .projects, .contact, .home {
+  background: #111 !important;
+  color: #f7f7f7;
+  border: none;
+}
+
+.card-title, .card-text, .card-body, .card {
+  color: #f7f7f7 !important;
+}
+
+.navbar, .navbar-dark, .bg-dark {
+  background: #000 !important;
+}
+
+.hero {
+  background: linear-gradient(90deg, #232526 0%, #414345 100%);
+  color: #fff;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+}
+.hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.hero p {
+  margin: 0.5rem 0 1.5rem 0;
+  font-size: 1.3rem;
+}
+.hero nav {
+  margin-top: 1rem;
+}
+.hero nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s;
+}
+.hero nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin: 2.5rem auto;
+  max-width: 800px;
+  background: #232526;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(30, 30, 30, 0.3);
+  padding: 2rem;
+}
+section h2 {
+  margin-top: 0;
+  color: #61dafb;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.project-card {
+  flex: 1 1 220px;
+  background: #282c34;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(100, 108, 255, 0.06);
+  color: #f7f7f7;
+}
+.project-card h3 {
+  margin-top: 0;
+}
+.project-card a {
+  color: #61dafb;
+  text-decoration: none;
+  font-weight: 500;
+}
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.skills li {
+  background: #333;
+  color: #f7f7f7;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.contact a {
+  color: #61dafb;
+  text-decoration: none;
+}
+.contact a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: #aaa;
+  font-size: 1rem;
+  background: #000 !important;
+}
+
+@media (max-width: 600px) {
+  .project-list {
+    flex-direction: column;
+  }
+  section {
+    padding: 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
