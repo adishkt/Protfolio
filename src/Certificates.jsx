@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const certifications = [
   {
     title: 'Full Stack Development (MERN) Certification',
@@ -18,20 +20,27 @@ const certifications = [
 
 function Certificates() {
   return (
-    <section id="certificates" className="certificates-section mb-5" style={{ color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
-      <h2 className="mb-3" style={{ color: 'var(--accent-color)', transition: 'color 0.3s ease' }}>Certifications</h2>
-      <div className="row">
-        {certifications.map((cert, idx) => (
-          <div className="col-md-4 mb-4" key={idx}>
-            <div className="p-3 h-100" style={{ background: 'var(--bg-card)', border: '1px solid var(--glass-border)', borderRadius: 12, boxShadow: 'var(--shadow)', transition: 'all 0.3s ease' }}>
-              <h5 className="fw-bold mb-1" style={{ color: 'var(--text-primary)' }}>{cert.title}</h5>
-              <div className="mb-2" style={{ color: 'var(--accent-color)', fontWeight: 500, transition: 'color 0.3s ease' }}>{cert.issuer}</div>
-              <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: 0 }}>{cert.description}</p>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6 }}
+    >
+      <section id="certificates" className="certificates-section mb-5" style={{ color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
+        <h2 className="mb-3" style={{ color: 'var(--accent-color)', transition: 'color 0.3s ease' }}>Certifications</h2>
+        <div className="row">
+          {certifications.map((cert, idx) => (
+            <div className="col-md-4 mb-4" key={idx}>
+              <div className="p-3 h-100" style={{ background: 'var(--bg-card)', border: '1px solid var(--glass-border)', borderRadius: 12, boxShadow: 'var(--shadow)', transition: 'all 0.3s ease' }}>
+                <h5 className="fw-bold mb-1" style={{ color: 'var(--text-primary)' }}>{cert.title}</h5>
+                <div className="mb-2" style={{ color: 'var(--accent-color)', fontWeight: 500, transition: 'color 0.3s ease' }}>{cert.issuer}</div>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: 0 }}>{cert.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </motion.div>
   );
 }
 

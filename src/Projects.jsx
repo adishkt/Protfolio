@@ -185,7 +185,13 @@ function Projects() {
   }, [selectedProject]);
 
   return (
-    <section id="projects" className="projects-section mb-5" style={{ color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <section id="projects" className="projects-section mb-5" style={{ color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
       <h2 className="mb-4" style={{ color: 'var(--accent-color)', transition: 'color 0.3s ease' }}>Projects</h2>
       
       <motion.div 
@@ -322,6 +328,7 @@ function Projects() {
         )}
       </AnimatePresence>
     </section>
+    </motion.div>
   );
 }
 
