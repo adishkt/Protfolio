@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const skillCategories = [
   {
     title: 'Programming Languages',
@@ -36,25 +38,32 @@ const skillCategories = [
 
 function Skills() {
   return (
-    <section id="skills" className="skills-section mb-5" style={{ color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
-      <h2 className="mb-4" style={{ color: 'var(--accent-color)', transition: 'color 0.3s ease' }}>Skills & Expertise</h2>
-      <div className="row">
-        {skillCategories.map((category, catIdx) => (
-          <div className="col-12 col-md-6 mb-4" key={catIdx}>
-            <div className="p-3 h-100" style={{ background: 'var(--bg-card)', border: '1px solid var(--glass-border)', borderRadius: 12, boxShadow: 'var(--shadow)', transition: 'all 0.3s ease' }}>
-              <h5 className="fw-bold mb-3" style={{ color: 'var(--accent-color)' }}>{category.title}</h5>
-              <div className="d-flex flex-wrap gap-2">
-                {category.skills.map((skill, sIdx) => (
-                  <span key={sIdx} className="tech-badge" style={{ fontSize: '0.85rem', padding: '0.4rem 0.8rem', margin: 0 }}>
-                    {skill}
-                  </span>
-                ))}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <section id="skills" className="skills-section mb-5" style={{ color: 'var(--text-primary)', transition: 'all 0.3s ease' }}>
+        <h2 className="mb-4" style={{ color: 'var(--accent-color)', transition: 'color 0.3s ease' }}>Skills & Expertise</h2>
+        <div className="row">
+          {skillCategories.map((category, catIdx) => (
+            <div className="col-12 col-md-6 mb-4" key={catIdx}>
+              <div className="p-3 h-100" style={{ background: 'var(--bg-card)', border: '1px solid var(--glass-border)', borderRadius: 12, boxShadow: 'var(--shadow)', transition: 'all 0.3s ease' }}>
+                <h5 className="fw-bold mb-3" style={{ color: 'var(--accent-color)' }}>{category.title}</h5>
+                <div className="d-flex flex-wrap gap-2">
+                  {category.skills.map((skill, sIdx) => (
+                    <span key={sIdx} className="tech-badge" style={{ fontSize: '0.85rem', padding: '0.4rem 0.8rem', margin: 0 }}>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </motion.div>
   );
 }
 
